@@ -15,6 +15,6 @@
     }
   },
   "runCommand": {
-    "commandToExecute": "[concat('powershell.exe -ExecutionPolicy bypass -File Test.ps1')]"
+    "commandToExecute": "[concat('powershell.exe -ExecutionPolicy bypass -File DomainJoin.ps1', ' -domain ', parameters('Domain'))]"
   }  
 }
