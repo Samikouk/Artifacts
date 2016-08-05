@@ -10,7 +10,7 @@
      "displayName": "Domain Name",
      "allowEmpty": false,
       "description": "The name of the domain that the VM should be joined to",
-      "defaultValue": "example1.com"
+      "defaultValue": "example.com"
     }
   },
   "runCommand": {
