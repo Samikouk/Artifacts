@@ -116,7 +116,7 @@ try
     $fullUserName = $cred.UserName
 
     $credential = New-Object System.Management.Automation.PSCredential($fullUserName,$securePassword)
-    Invoke-Command -scriptBlock { Add-Computer -DomainName $domain -Credential $credential -Restart } -computername $env:COMPUTERNAME
+    Add-Computer -DomainName $domain -Credential $credential -Restart
     #Remove-Item -path 'C:\Script\domainjoin.csv' -Force
 }
 
