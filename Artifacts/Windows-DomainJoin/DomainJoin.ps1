@@ -44,7 +44,8 @@ Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process -Force
 #
 
 # Location of the log files
-$ScriptLogFolder = Join-Path $PSScriptRoot -ChildPath $("DomainJoin-" + [System.DateTime]::Now.ToString("yyyy-MM-dd-HH-mm-ss"))
+#$ScriptLogFolder = Join-Path $PSScriptRoot -ChildPath $("DomainJoin-" + [System.DateTime]::Now.ToString("yyyy-MM-dd-HH-mm-ss"))
+$ScriptLogFolder = "C:\Azure"
 $ScriptLog = Join-Path -Path $ScriptLogFolder -ChildPath "DomainJoin.log"
 #$ScriptLog = 'C:\Azure\DomainJoin.log'
 # Default exit code
@@ -116,7 +117,7 @@ try
     $fullUserName = $cred.UserName
 
     $credential = New-Object System.Management.Automation.PSCredential($fullUserName,$securePassword)
-    Add-Computer -DomainName $domain -Credential $credential -Restart
+    Add-Computer -DomainName $domain -Credential $credential
     #Remove-Item -path 'C:\Script\domainjoin.csv' -Force
 }
 
