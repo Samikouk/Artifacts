@@ -44,9 +44,9 @@ Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process -Force
 #
 
 # Location of the log files
-#$ScriptLogFolder = Join-Path $PSScriptRoot -ChildPath $("DomainJoin-" + [System.DateTime]::Now.ToString("yyyy-MM-dd-HH-mm-ss"))
-#$ScriptLog = Join-Path -Path $ScriptLogFolder -ChildPath "DomainJoin.log"
-$ScriptLog = 'C:\Azure\DomainJoin.log'
+$ScriptLogFolder = Join-Path $PSScriptRoot -ChildPath $("DomainJoin-" + [System.DateTime]::Now.ToString("yyyy-MM-dd-HH-mm-ss"))
+$ScriptLog = Join-Path -Path $ScriptLogFolder -ChildPath "DomainJoin.log"
+#$ScriptLog = 'C:\Azure\DomainJoin.log'
 # Default exit code
 $ExitCode = 0
 
