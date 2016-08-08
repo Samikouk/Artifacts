@@ -106,7 +106,7 @@ function WriteLog
 try
 {
     #
-    InitializeFolders
+    #InitializeFolders
 
     $cred = Import-Csv c:\script\domainjoin.csv
 
@@ -116,7 +116,7 @@ try
     $fullUserName = $cred.UserName
 
     $credential = New-Object System.Management.Automation.PSCredential($fullUserName,$securePassword)
-    Add-Computer -DomainName $domain -Credential $credential -Restart
+    Invoke-Command -scriptBlock { Add-Computer -DomainName $domain -Credential $credential -Restart } -computername $env:COMPUTERNAME
     #Remove-Item -path 'C:\Script\domainjoin.csv' -Force
 }
 
