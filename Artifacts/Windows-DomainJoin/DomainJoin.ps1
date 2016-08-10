@@ -117,7 +117,7 @@ try
     $fullUserName = $cred.UserName
 
     $credential = New-Object System.Management.Automation.PSCredential($fullUserName,$securePassword)
-    Add-Computer -DomainName $domain -Credential $credential
+    Add-Computer -DomainName $domain -Credential $credential -OUPath "OU=AzureDevTest,OU=Windows 7 Computers,DC=mat,DC=tagmclarengroup,DC=com"
     Restart-Computer
     #Remove-Item -path 'C:\Script\domainjoin.csv' -Force
 }
