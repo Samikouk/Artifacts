@@ -43,12 +43,12 @@
     "autoUpgradeMinorVersion": true,
     "settings": {
           "Name": "[parameters('domainName')]",
-          "OUPath": "[parameters('domainOU')]",
-          "User": "[parameters('domainJoinUser')]",
           "Restart": "true",
           "Options": "3"
         },
     "protectedSettings": {
+          "OUPath": "[parameters('domainOU')]",
+          "User": "[parameters('domainJoinUser')]",
           "Password": "[parameters('domainJoinUserPassword')]"
     }
   }
