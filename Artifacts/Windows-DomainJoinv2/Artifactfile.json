@@ -20,7 +20,7 @@
           "type": "securestring",
           "displayName": "Active Directory Domain OU",
           "description": "The distinguished name of the Organizational Unit to join (e.g. \"OU=DevTest,DC=corp,DC=contoso,DC=com\")",
-          "defaultValue": "[[DomainOU]]"
+          "defaultValue": "[[DomainClientOU]]"
       },
       "domainJoinUser": {
           "type": "securestring",
