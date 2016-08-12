@@ -7,7 +7,7 @@
     "Windows",
     "Active Directory"
   ],
-  "iconUri": "https://raw.githubusercontent.com/Samikouk/Azure/Artifacts/Windows-DomainJoinv2/AD.png",
+  "iconUri": "http://www.freeiconspng.com/uploads/active-directory-icon-png-18.png",
   "targetOsType": "Windows",
   "parameters": { 
       "domainName": {
