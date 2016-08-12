@@ -17,13 +17,13 @@
           "defaultValue": "example.com"
       },
       "domainOU": {
-          "type": "string",
+          "type": "securestring",
           "displayName": "Active Directory Domain OU",
           "description": "The distinguished name of the Organizational Unit to join (e.g. \"OU=DevTest,DC=corp,DC=contoso,DC=com\")",
           "defaultValue": "[[DomainOU]]"
       },
       "domainJoinUser": {
-          "type": "string",
+          "type": "securestring",
           "displayName": "Domain Join User Account",
           "description": "The user account with rights to join the system to the domain (e.g. \"CORP\\user\" or \"user@corp.contoso.com\")",
           "defaultValue": "[[DomainUsername]]"
