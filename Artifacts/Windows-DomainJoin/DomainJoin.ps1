@@ -1,13 +1,13 @@
 Param(
     [ValidateNotNullOrEmpty()]
     [Parameter(Mandatory=$True)]
-    [string] $domain
+    [string] $domain,
     [ValidateNotNullOrEmpty()]
     [Parameter(Mandatory=$True)]
-    [string] $domainOU
+    [string] $domainOU,
     [ValidateNotNullOrEmpty()]
     [Parameter(Mandatory=$True)]
-    [string] $domainUser
+    [string] $domainUser,
     [ValidateNotNullOrEmpty()]
     [Parameter(Mandatory=$True)]
     [string] $domainPass
