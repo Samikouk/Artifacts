@@ -107,15 +107,15 @@ try
     #
     #InitializeFolders
 
-    $cred = Import-Csv c:\Azure\domainjoin.csv
+    #$cred = Import-Csv c:\Azure\domainjoin.csv
 
     # Concatenate the full user (domain\userName) to be used to join to the domain   
     # Followed by adding the machine to the specified domain
-    $securePassword = $cred.Password | ConvertTo-SecureString -asPlainText -Force
-    $fullUserName = $cred.UserName
+    $securePassword = $domainPass | ConvertTo-SecureString -asPlainText -Force
+    #$fullUserName = $cred.UserName
 
-    $credential = New-Object System.Management.Automation.PSCredential($fullUserName,$securePassword)
-    Add-Computer -DomainName $domain -Credential $credential -OUPath $cred.OU
+    $credential = New-Object System.Management.Automation.PSCredential($domainUser,$securePassword)
+    Add-Computer -DomainName $domain -Credential $credential -OUPath $domainOU
     Restart-Computer
     Remove-Item -path 'C:\Azure\domainjoin.csv' -Force
 }
