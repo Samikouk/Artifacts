@@ -12,9 +12,27 @@
      "allowEmpty": false,
       "description": "The name of the domain that the VM should be joined to",
       "defaultValue": "example.com"
-    }
+    },
+          "domainOU": {
+          "type": "securestring",
+          "displayName": "Active Directory Domain OU",
+          "description": "The distinguished name of the Organizational Unit to join (e.g. \"OU=DevTest,DC=corp,DC=contoso,DC=com\")",
+          "defaultValue": "[[DomainClientOU]]"
+      },
+      "domainJoinUser": {
+          "type": "securestring",
+          "displayName": "Domain Join User Account",
+          "description": "The user account with rights to join the system to the domain (e.g. \"CORP\\user\" or \"user@corp.contoso.com\")",
+          "defaultValue": "[[DomainUsername]]"
+      },
+      "domainJoinUserPassword": {
+          "type": "securestring",
+          "displayName": "Domain Join User Account Password",
+          "description": "Password of the Domain Join User Account.",
+          "defaultValue": "[[DomainPassword]]"
+      }
   },
   "runCommand": {
-    "commandToExecute": "[concat('powershell.exe -ExecutionPolicy bypass -File DomainJoin.ps1', ' -domain ', parameters('Domain'))]"
+    "commandToExecute": "[concat('powershell.exe -ExecutionPolicy bypass -File DomainJoin.ps1', ' -domain ', parameters('Domain'), '-domainOU', parameters('DomainOU'), '-domainUser', parameters('DomainJoinUser'), '-domainPass', parameters('DomainJoinUserPassword'))]"
   }  
 }

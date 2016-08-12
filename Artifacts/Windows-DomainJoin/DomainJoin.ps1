@@ -2,6 +2,15 @@ Param(
     [ValidateNotNullOrEmpty()]
     [Parameter(Mandatory=$True)]
     [string] $domain
+    [ValidateNotNullOrEmpty()]
+    [Parameter(Mandatory=$True)]
+    [string] $domainOU
+    [ValidateNotNullOrEmpty()]
+    [Parameter(Mandatory=$True)]
+    [string] $domainUser
+    [ValidateNotNullOrEmpty()]
+    [Parameter(Mandatory=$True)]
+    [string] $domainPass
 )
 
 <##################################################################################################
