@@ -4,13 +4,13 @@ Param(
     [string] $domain,
     [ValidateNotNullOrEmpty()]
     [Parameter(Mandatory=$True)]
-    [string] $domainOU,
+    [securestring] $domainOU,
     [ValidateNotNullOrEmpty()]
     [Parameter(Mandatory=$True)]
-    [string] $domainUser,
+    [securestring] $domainUser,
     [ValidateNotNullOrEmpty()]
     [Parameter(Mandatory=$True)]
-    [string] $domainPass
+    [securestring] $domainPass
 )
 
 <##################################################################################################
@@ -111,13 +111,13 @@ try
 
     # Concatenate the full user (domain\userName) to be used to join to the domain   
     # Followed by adding the machine to the specified domain
-    $securePassword = $domainPass | ConvertTo-SecureString -asPlainText -Force
+    #$securePassword = $domainPass | ConvertTo-SecureString -asPlainText -Force
     #$fullUserName = $cred.UserName
 
-    $credential = New-Object System.Management.Automation.PSCredential($domainUser,$securePassword)
+    $credential = New-Object System.Management.Automation.PSCredential($domainUser,$domainPass)
     Add-Computer -DomainName $domain -Credential $credential -OUPath $domainOU
     Restart-Computer
-    Remove-Item -path 'C:\Azure\domainjoin.csv' -Force
+    #Remove-Item -path 'C:\Azure\domainjoin.csv' -Force
 }
 
 catch
