@@ -43,7 +43,7 @@
     "autoUpgradeMinorVersion": true,
     "settings": {
           "Name": "[parameters('domainName')]",
-          "Restart": "true",
+          "Restart": "false",
           "Options": "3"
         },
     "protectedSettings": {
